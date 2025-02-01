@@ -2,10 +2,12 @@ import React from "react";
 import { people } from "../data/People";
 import { IoMdNotifications } from "react-icons/io";
 import { AiFillMessage } from "react-icons/ai";
-import "./Navbar.css"; // Import external CSS for animations
+import "../Styles/Navbar.css"; // Import external CSS for animations
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   return (
+    <>
     <div style={{ backgroundColor: "#d61856" }} className="w-full flex justify-evenly gap-2 p-5">
       {/* Logo */}
       <h1 className="font-bold text-4xl text-white">Logo</h1>
@@ -38,7 +40,7 @@ const Navbar = () => {
       </div>
 
       {/* Notification Icons */}
-      <div className="flex gap-6 mt-6">
+      <div className="flex gap-6 mt-4">
   <div className="relative">
     <IoMdNotifications className="text-white text-4xl cursor-pointer p-2 rounded-full transition-all duration-300 ease-in-out transform group hover:scale-110 hover:shadow-xl hover:shadow-pink-400 bg-gradient-to-r from-pink-500 to-red-500 hover:text-yellow-500 hover:animate-pulse" />
     <span className="absolute text-xs text-white bottom-0 right-0 translate-x-1/4 translate-y-1/4 opacity-0 group-hover:opacity-100 transition-opacity">Notifications</span>
@@ -50,10 +52,10 @@ const Navbar = () => {
   </div>
 </div>
 
-
-
-
     </div>
+    <Sidebar />
+    </>
+
   );
 };
 
