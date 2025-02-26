@@ -7,14 +7,14 @@ import { AiFillSetting, AiOutlineUser } from 'react-icons/ai';
 const Sidebar = () => {
   return (
     <>
-      <div className='w-[15vw] h-[82vh] flex border-r-2 border-white '  style={{ backgroundColor: "#d61856" }}>
+      <div className='w-[15vw] h-[82vh] flex border-r-2 border-white ' style={{ backgroundColor: "#d61856" }}>
         <div className='flex flex-col pt-18 ml-10'>
           <ul className='flex flex-col items-center'>
 
             <li className='flex items-center justify-center gap-6 mb-5 mt-5'>
               <IoMdHome className='text-4xl' />
               <Link to='/home'>
-              <h1 className='font-bold text-2xl text-white cursor-pointer'>Home</h1>
+                <h1 className='font-bold text-2xl text-white cursor-pointer'>Home</h1>
               </Link>
             </li>
 
@@ -28,7 +28,7 @@ const Sidebar = () => {
             <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
               <GiCompass className='text-4xl' />
               <Link to='/Nearby'>
-              <h1 className='font-bold text-2xl text-white cursor-pointer'>Nearby</h1>
+                <h1 className='font-bold text-2xl text-white cursor-pointer'>Nearby</h1>
               </Link>
             </li>
             <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
@@ -40,7 +40,7 @@ const Sidebar = () => {
               <h1 className='font-bold text-2xl text-white cursor-pointer'>Settings</h1>
             </li>
 
-            
+
           </ul>
         </div>
       </div>
