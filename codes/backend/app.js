@@ -2,6 +2,8 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const db = require("./config/dbconn");
 const jwt = require("jsonwebtoken");
+const http = require("http"); // socket.io nu chalon lai nttp server chida aa.
+const socketio = require("socket.io");
 
 const userModel = require("./models/userModel");
 const postModel = require("./models/postsModel");
@@ -10,6 +12,9 @@ const cookieParser = require("cookie-parser");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const server = http.createServer(app);
+const io = socketio(server);
 
 const port = 5000;
 app.get("/", (req, res) => {});
@@ -52,6 +57,11 @@ app.get("/login", async (req, res) => {
   }
 
   res.send("Login Page");
+});
+
+app.get("/nearby", (req, res) => {
+  // Implementing some basic filtering and sorting logic here.
+  res.send("hello nearby");
 });
 
 app.listen(port, () => {

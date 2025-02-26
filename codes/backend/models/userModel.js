@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema({
     min: 18,
     max: 99,
   },
+  gender: {
+    type: String,
+    enum: ["male", "female", "other"],
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now,

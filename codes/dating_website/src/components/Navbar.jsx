@@ -4,7 +4,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { AiFillMessage } from "react-icons/ai";
 import "../Styles/Navbar.css"; // Import external CSS for animations
 import Sidebar from "./Sidebar";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"; 
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 const Navbar = () => {
   return (
     <>
@@ -14,7 +14,7 @@ const Navbar = () => {
 
         {/* People Avatars */}
         <div className="rounded-full flex gap-3 ml-20 mt-10">
-        <FaArrowAltCircleLeft className="mt-6 text-3xl"/>
+          <FaArrowAltCircleLeft className="mt-6 text-3xl" />
           {people.map((e, i) => (
             <img
               key={i}
@@ -23,7 +23,7 @@ const Navbar = () => {
               alt=""
             />
           ))}
-          <FaArrowAltCircleRight className="mt-6 text-3xl"/>
+          <FaArrowAltCircleRight className="mt-6 text-3xl" />
         </div>
 
         {/* Animated Button */}

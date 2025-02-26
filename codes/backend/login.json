@@ -1,0 +1,183 @@
+[
+  {
+    "username": "john_doe",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "hashed_password_1",
+    "age": 25,
+    "gender": "male",
+    "coordinates": [77.209, 28.6139]
+  },
+  {
+    "username": "mike_smith",
+    "name": "Mike Smith",
+    "email": "mike@example.com",
+    "password": "hashed_password_2",
+    "age": 28,
+    "gender": "male",
+    "coordinates": [77.1025, 28.7041]
+  },
+  {
+    "username": "alex_jones",
+    "name": "Alex Jones",
+    "email": "alex@example.com",
+    "password": "hashed_password_3",
+    "age": 30,
+    "gender": "male",
+    "coordinates": [77.201, 28.61]
+  },
+  {
+    "username": "ryan_roy",
+    "name": "Ryan Roy",
+    "email": "ryan@example.com",
+    "password": "hashed_password_4",
+    "age": 22,
+    "gender": "male",
+    "coordinates": [77.205, 28.615]
+  },
+  {
+    "username": "sam_wilson",
+    "name": "Sam Wilson",
+    "email": "sam@example.com",
+    "password": "hashed_password_5",
+    "age": 27,
+    "gender": "male",
+    "coordinates": [77.208, 28.614]
+  },
+  {
+    "username": "chris_evans",
+    "name": "Chris Evans",
+    "email": "chris@example.com",
+    "password": "hashed_password_6",
+    "age": 29,
+    "gender": "male",
+    "coordinates": [77.207, 28.613]
+  },
+  {
+    "username": "tony_stark",
+    "name": "Tony Stark",
+    "email": "tony@example.com",
+    "password": "hashed_password_7",
+    "age": 35,
+    "gender": "male",
+    "coordinates": [77.206, 28.612]
+  },
+  {
+    "username": "bruce_wayne",
+    "name": "Bruce Wayne",
+    "email": "bruce@example.com",
+    "password": "hashed_password_8",
+    "age": 32,
+    "gender": "male",
+    "coordinates": [77.204, 28.611]
+  },
+  {
+    "username": "peter_parker",
+    "name": "Peter Parker",
+    "email": "peter@example.com",
+    "password": "hashed_password_9",
+    "age": 24,
+    "gender": "male",
+    "coordinates": [77.203, 28.61]
+  },
+  {
+    "username": "clark_kent",
+    "name": "Clark Kent",
+    "email": "clark@example.com",
+    "password": "hashed_password_10",
+    "age": 31,
+    "gender": "male",
+    "coordinates": [77.202, 28.609]
+  },
+
+  {
+    "username": "jane_smith",
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "password": "hashed_password_11",
+    "age": 23,
+    "gender": "female",
+    "coordinates": [77.1025, 28.7041]
+  },
+  {
+    "username": "emma_watson",
+    "name": "Emma Watson",
+    "email": "emma@example.com",
+    "password": "hashed_password_12",
+    "age": 26,
+    "gender": "female",
+    "coordinates": [77.103, 28.705]
+  },
+  {
+    "username": "sarah_johnson",
+    "name": "Sarah Johnson",
+    "email": "sarah@example.com",
+    "password": "hashed_password_13",
+    "age": 24,
+    "gender": "female",
+    "coordinates": [77.104, 28.706]
+  },
+  {
+    "username": "lisa_ray",
+    "name": "Lisa Ray",
+    "email": "lisa@example.com",
+    "password": "hashed_password_14",
+    "age": 27,
+    "gender": "female",
+    "coordinates": [77.105, 28.707]
+  },
+  {
+    "username": "anna_karenina",
+    "name": "Anna Karenina",
+    "email": "anna@example.com",
+    "password": "hashed_password_15",
+    "age": 29,
+    "gender": "female",
+    "coordinates": [77.106, 28.708]
+  },
+  {
+    "username": "mary_jane",
+    "name": "Mary Jane",
+    "email": "mary@example.com",
+    "password": "hashed_password_16",
+    "age": 25,
+    "gender": "female",
+    "coordinates": [77.107, 28.709]
+  },
+  {
+    "username": "diana_prince",
+    "name": "Diana Prince",
+    "email": "diana@example.com",
+    "password": "hashed_password_17",
+    "age": 30,
+    "gender": "female",
+    "coordinates": [77.108, 28.71]
+  },
+  {
+    "username": "natasha_romanoff",
+    "name": "Natasha Romanoff",
+    "email": "natasha@example.com",
+    "password": "hashed_password_18",
+    "age": 28,
+    "gender": "female",
+    "coordinates": [77.109, 28.711]
+  },
+  {
+    "username": "wanda_maximoff",
+    "name": "Wanda Maximoff",
+    "email": "wanda@example.com",
+    "password": "hashed_password_19",
+    "age": 26,
+    "gender": "female",
+    "coordinates": [77.11, 28.712]
+  },
+  {
+    "username": "peggy_carter",
+    "name": "Peggy Carter",
+    "email": "peggy@example.com",
+    "password": "hashed_password_20",
+    "age": 31,
+    "gender": "female",
+    "coordinates": [77.111, 28.713]
+  }
+]
