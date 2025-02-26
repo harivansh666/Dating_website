@@ -1,16 +1,37 @@
-import react from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/Navbar'
+import React, { useState } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import MainHome from './components/MainHome';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SearchPage from './components/SearchPage';
+import SignIn from './Pages/SignIn';
+import CreateAcc from './Pages/CreateAcc';
+import Nearby from './components/Nearby';
+
+
 
 function App() {
+  const [aiRender, setAiRender] = useState(false);
+
+  const handleAiDate = () => {
+    setAiRender(true);  // Trigger the rendering of the AI content
+  };
 
   return (
-    <>
-     <Navbar />
-    </>
-  )
+    <BrowserRouter>
+      <Routes >
+
+        <Route path={'/'} element={ <SignIn/>} />   {/* Pass aiRender state to MainHome */}
+        <Route path={'/home'} element={ <MainHome aiRender={aiRender}  handleAiDate={handleAiDate} />} />   Pass aiRender state to MainHome
+        <Route path={'/search'} element={<SearchPage />}/>
+        <Route path={'/createAcc'} element={<CreateAcc/>} />
+        <Route path={'/Nearby'} element={<Nearby/>} />
+
+      </Routes>
+
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

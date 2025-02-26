@@ -1,37 +1,51 @@
-import React from 'react'
-import { IoMdHome, IoMdSearch } from 'react-icons/io'
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
+import { IoMdHome, IoMdSearch } from 'react-icons/io';
 import { GiCompass } from "react-icons/gi";
-import { AiFillProfile, AiFillSetting, AiOutlineUser } from 'react-icons/ai';
+import { AiFillSetting, AiOutlineUser } from 'react-icons/ai';
 
 const Sidebar = () => {
   return (
-    <div className='w-[20vw] h-[80vh] 'style={{backgroundColor :"#d61856"}} >
-       <div className='flex flex-col pt-18'>
-        <ul className='flex flex-col items-center'>
-            <li className='flex items-center justify-center gap-6 mb-5 mt-5'>
-            <IoMdHome className='text-4xl' />
-            <h1 className='font-bold text-2xl text-white cursor-pointer'>Home</h1>
-            </li>
-            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
-            <IoMdSearch className='text-4xl' />
-            <h1 className='font-bold text-2xl text-white cursor-pointer'>Search</h1>
-            </li>
-            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
-            <GiCompass className='text-4xl' />
-            <h1 className='font-bold text-2xl text-white cursor-pointer'>Nearby</h1>
-            </li>
-            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
-            <AiOutlineUser className='text-4xl' />
-            <h1 className='font-bold text-2xl text-white cursor-pointer'>Profile</h1>
-            </li>
-            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
-            <AiFillSetting  className='text-4xl' />
-            <h1 className='font-bold text-2xl text-white cursor-pointer'>Settings</h1>
-            </li>
-        </ul>
-       </div>
-    </div>
-  )
-}
+    <>
+      <div className='w-[15vw] h-[82vh] flex border-r-2 border-white '  style={{ backgroundColor: "#d61856" }}>
+        <div className='flex flex-col pt-18 ml-10'>
+          <ul className='flex flex-col items-center'>
 
-export default Sidebar
+            <li className='flex items-center justify-center gap-6 mb-5 mt-5'>
+              <IoMdHome className='text-4xl' />
+              <Link to='/home'>
+              <h1 className='font-bold text-2xl text-white cursor-pointer'>Home</h1>
+              </Link>
+            </li>
+
+            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
+              <IoMdSearch className='text-4xl' />
+              <Link to='/search'>
+                <h1 className='font-bold text-2xl text-white cursor-pointer'>Search</h1>
+              </Link>
+            </li>
+
+            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
+              <GiCompass className='text-4xl' />
+              <Link to='/Nearby'>
+              <h1 className='font-bold text-2xl text-white cursor-pointer'>Nearby</h1>
+              </Link>
+            </li>
+            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
+              <AiOutlineUser className='text-4xl' />
+              <h1 className='font-bold text-2xl text-white cursor-pointer'>Profile</h1>
+            </li>
+            <li className='flex items-center justify-center gap-6 mb-5 mt-4'>
+              <AiFillSetting className='text-4xl' />
+              <h1 className='font-bold text-2xl text-white cursor-pointer'>Settings</h1>
+            </li>
+
+            
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Sidebar;
