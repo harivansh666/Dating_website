@@ -1,9 +1,11 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const db = require("./config/dbconn");
+const router = express.Router();
 const jwt = require("jsonwebtoken");
 const http = require("http"); // socket.io nu chalon lai nttp server chida aa.
 const socketio = require("socket.io");
+const cors = require("cors");
 
 const userModel = require("./models/userModel");
 const postModel = require("./models/postsModel");
@@ -12,6 +14,12 @@ const cookieParser = require("cookie-parser");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  cors({
+    origin: "http://localhost:5173", // replace with your frontend URL
+    credentials: true,
+  })
+);
 
 const server = http.createServer(app);
 const io = socketio(server);
@@ -19,7 +27,8 @@ const io = socketio(server);
 const port = 5000;
 app.get("/", (req, res) => {});
 app.post("/createac", async (req, res) => {
-  const { username, name, email, password, age } = req.body;
+  const { username, name, email, password, age, gender } = req.body;
+  console.log(username, name, email, password, age, gender);
 
   // Implementing some basic validation for email and password here.
   const user = await userModel.findOne({ email: email });
@@ -37,6 +46,7 @@ app.post("/createac", async (req, res) => {
         email,
         password: hash,
         age,
+        gender,
       });
       await newUser.save();
       const token = jwt.sign({ email: email, password: password }, "shhhhh");
@@ -46,17 +56,25 @@ app.post("/createac", async (req, res) => {
   // Implementing some basic validation for email and password here.
 });
 
-app.get("/login", async (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
+  // console.log("email" + email, "password:" + password);
 
   // Implementing some basic validation for email and password here.
-
   const user = await userModel.findOne({ email: email });
   if (!user) {
     return res.status(400).json({ message: "User not found" });
   }
-
-  res.send("Login Page");
+  bcrypt.compare(password, user.password, (err, isMatch) => {
+    if (err) throw err;
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
+    // res.send("hello buddy");
+    const token = jwt.sign({ email: email, password: password }, "shhhhh");
+    res.cookie("token", token);
+    res.status(200).json({ message: "Login successful" }); // iss line krke login hoya
+  });
 });
 
 app.get("/nearby", (req, res) => {

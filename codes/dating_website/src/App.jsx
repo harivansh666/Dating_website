@@ -6,8 +6,9 @@ import MainHome from './components/MainHome';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchPage from './components/SearchPage';
 import SignIn from './Pages/SignIn';
-import CreateAcc from './Pages/CreateAcc';
+// import CreateAcc from './Pages/CreateAcc';
 import Nearby from './components/Nearby';
+
 
 
 
@@ -22,11 +23,11 @@ function App() {
     <BrowserRouter>
       <Routes >
 
-        <Route path={'/'} element={ <SignIn/>} />   {/* Pass aiRender state to MainHome */}
-        <Route path={'/home'} element={ <MainHome aiRender={aiRender}  handleAiDate={handleAiDate} />} />   Pass aiRender state to MainHome
-        <Route path={'/search'} element={<SearchPage />}/>
-        <Route path={'/createAcc'} element={<CreateAcc/>} />
-        <Route path={'/Nearby'} element={<Nearby/>} />
+        <Route path={'/'} element={<SignIn />} />   {/* Pass aiRender state to MainHome */}
+        <Route path={'/home'} element={<MainHome aiRender={aiRender} handleAiDate={handleAiDate} />} />   Pass aiRender state to MainHome
+        <Route path={'/search'} element={<SearchPage />} />
+        {/* <Route path={'/createAcc'} element={<CreateAcc/>} /> */}
+        <Route path={'/Nearby'} element={<Nearby />} />
 
       </Routes>
 
