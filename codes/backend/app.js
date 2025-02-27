@@ -25,7 +25,6 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 const port = 5000;
-app.get("/", (req, res) => {});
 app.post("/createac", async (req, res) => {
   const { username, name, email, password, age, gender } = req.body;
   console.log(username, name, email, password, age, gender);
@@ -58,13 +57,14 @@ app.post("/createac", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  // console.log("email" + email, "password:" + password);
 
   // Implementing some basic validation for email and password here.
   const user = await userModel.findOne({ email: email });
+
   if (!user) {
     return res.status(400).json({ message: "User not found" });
   }
+
   bcrypt.compare(password, user.password, (err, isMatch) => {
     if (err) throw err;
     if (!isMatch) {

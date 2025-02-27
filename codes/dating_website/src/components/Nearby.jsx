@@ -1,20 +1,28 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import axios, { Axios } from 'axios'
 
 const Nearby = () => {
+
+  axios.get('/"http://localhost:5000/nearby', {
+    
+  })
+
+
+
   return (
     <>
-   <Navbar />
+      <Navbar />
 
-   <div className='flex'>
-   <Sidebar />
-    <div className='flex justify-center items-center w-[1350px] bg-pink-500' >
-        <div className='w-[900px] h-[500px] rounded-2xl bg-amber-100'></div>
-   </div>
+      <div className='flex'>
+        <Sidebar />
+        <div className='flex justify-center items-center w-[1350px] bg-pink-500' >
+          <div className='w-[900px] h-[500px] rounded-2xl bg-amber-100'></div>
+        </div>
 
-    </div>
-     </>
+      </div>
+    </>
   )
 }
 

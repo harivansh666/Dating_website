@@ -33,7 +33,6 @@ const SignIn = () => {
       // Redirect karne ke liye (e.g., useNavigate hook use karein)
     }
 
-
     catch (error) {
       console.error("Login Failed:", error.response?.data || error.message);
       alert("Invalid credentials!");
@@ -47,7 +46,7 @@ const SignIn = () => {
         {/* Left Section */}
         <div className="h-110 w-80 mt-30 ml-4 absolute">
           <img src={Dancers} alt=""
-            className="h-full w-full" />
+            className=" h-full w-full ml-[-40px]" />
         </div>
 
         <div className="w-1/2 flex ml-30 flex-col justify-center items-center p-10 text-white">
@@ -100,7 +99,7 @@ const SignIn = () => {
             <img src={plane} alt="Smiling man" className="w-full rounded-lg" />
           </div>
         </div>
-        <div className="w-40 h-38 absolute left-12 bottom-0 h-fit">
+        <div className="sm:w-30 w-40 h-38 absolute left-12 bottom-0 h-fit">
           <img src={tile} alt="" />
         </div>
       </div>

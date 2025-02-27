@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema({
       ref: "posts",
     },
   ],
+  location: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "location",
+  },
 });
 
 module.exports = mongoose.model("user", userSchema);

@@ -8,3 +8,5 @@ const locationSchema = mongoose.Schema({
   },
   timestamp: { type: Date, default: Date.now },
 });
+
+module.exports = mongoose.model("Location", locationSchema);
