@@ -8,6 +8,7 @@ import SearchPage from './components/SearchPage';
 import SignIn from './Pages/SignIn';
 // import CreateAcc from './Pages/CreateAcc';
 import Nearby from './components/Nearby';
+import CreateAcc from './Pages/CreateAcc';
 
 
 
@@ -22,12 +23,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes >
-
         <Route path={'/'} element={<SignIn />} />   {/* Pass aiRender state to MainHome */}
         <Route path={'/home'} element={<MainHome aiRender={aiRender} handleAiDate={handleAiDate} />} />   Pass aiRender state to MainHome
         <Route path={'/search'} element={<SearchPage />} />
         {/* <Route path={'/createAcc'} element={<CreateAcc/>} /> */}
         <Route path={'/Nearby'} element={<Nearby />} />
+        <Route path={'/createAcc'} element={<CreateAcc />} />
+
 
       </Routes>
 

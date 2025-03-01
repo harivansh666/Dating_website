@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-codes/dating_website/Dating_website
-=======
 images/exported/artboard 1/facebook.png
 images/exported/artboard 1/Dancers.csh 1.jpg
 images/exported/artboard 1/Ellipse 3.jpg
@@ -10,4 +7,25 @@ images/exported/artboard 1/search.png
 images/exported/artboard 1/Tile 2 1.jpg
 images/exported/artboard 1/twitter.png
 images/exported/images/search.png
->>>>>>> feature/search
+
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+
+
+
+
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/#react,node,mongodb,macos,windows,visualstudiocode

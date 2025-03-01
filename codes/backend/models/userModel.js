@@ -1,12 +1,8 @@
 const mongoose = require("mongoose");
+const locationModel = require("./Location");
 
 const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-  },
-  name: {
+  fullName: {
     type: String,
     required: true,
   },
@@ -30,9 +26,14 @@ const userSchema = new mongoose.Schema({
     enum: ["male", "female", "other"],
     required: true,
   },
-  date: {
+  dateOfBirth: {
     type: Date,
-    default: Date.now,
+    required: true,
+  },
+  profilePicture: {
+    type: String,
+    default: "",
+    required: false,
   },
   posts: [
     {

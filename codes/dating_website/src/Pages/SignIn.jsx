@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'; // Import Link
-// import Dancers from './public/Dancers.csh.jpg'
+// import CreateAcc from "./CreateAcc";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Dancers from "../images/exported/artboard 1/Dancers.png";
@@ -99,7 +99,7 @@ const SignIn = () => {
             <img src={plane} alt="Smiling man" className="w-full rounded-lg" />
           </div>
         </div>
-        <div className="sm:w-30 w-40 h-38 absolute left-12 bottom-0 h-fit">
+        <div className="sm:w-30 w-40 absolute left-12 bottom-0 h-fit">
           <img src={tile} alt="" />
         </div>
       </div>
