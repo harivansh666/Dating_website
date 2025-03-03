@@ -43,7 +43,7 @@ const CreateAcc = () => {
       e.preventDefault();
       try {
         const response = await axios.post("http://localhost:5000/createAcc", formData);
-        // console.log("Account created:", response.data);
+        console.log("Account created:", response.data);
         navigate('/'); // Sign In page pe redirect
       } catch (error) {
         console.error("Error:", error);

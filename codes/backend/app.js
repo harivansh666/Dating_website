@@ -8,12 +8,12 @@ const socketio = require("socket.io");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
-
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 //routes
 const ProjfileRoutes = require("./routes/ProjfileRoutes");
