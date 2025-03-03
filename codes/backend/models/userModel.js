@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const locationModel = require("./Location");
+const like = require("./likes");
 
 const userSchema = new mongoose.Schema({
   fullName: {
@@ -26,6 +27,11 @@ const userSchema = new mongoose.Schema({
     enum: ["male", "female", "other"],
     required: true,
   },
+  genderPerference: {
+    type: String,
+    enum: ["male", "female"],
+    required: true,
+  },
   dateOfBirth: {
     type: Date,
     required: true,
@@ -45,6 +51,25 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "location",
   },
+  bio: {
+    type: String,
+    required: false,
+  },
+  likes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      default: null,
+    },
+  ],
+
+  dislikes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      default: null,
+    },
+  ],
 });
 
 module.exports = mongoose.model("user", userSchema);

@@ -27,8 +27,28 @@ const login = async (req, res) => {
 
 const createuser = async (req, res) => {
   try {
-    const { fullName, email, password, dateOfBirth, gender, location } =
-      req.body;
+    const {
+      fullName,
+      email,
+      password,
+      dateOfBirth,
+      gender,
+      genderprefrence,
+      location,
+    } = req.body;
+
+    if (
+      !fullName?.trim() ||
+      !email?.trim() ||
+      !password?.trim() ||
+      !dateOfBirth ||
+      !gender?.trim() ||
+      !genderprefrence?.trim() ||
+      !location?.lat ||
+      !location?.lng
+    ) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
 
     // Calculate age from dateOfBirth
     const birthDate = new Date(dateOfBirth);
@@ -59,7 +79,10 @@ const createuser = async (req, res) => {
       age: age,
       gender: gender,
       dateOfBirth: dateOfBirth,
+      genderPerference: genderprefrence,
     });
+
+    await newUser.save();
 
     // Create location document
     const newLocation = await locationModel.create({
@@ -69,7 +92,6 @@ const createuser = async (req, res) => {
         lng: location.lng,
       },
     });
-    await newUser.save();
     res.status(201).json({ message: "User created successfully" });
     await newLocation.save();
   } catch (err) {

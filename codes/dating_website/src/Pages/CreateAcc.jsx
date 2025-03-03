@@ -4,12 +4,15 @@ import axios from "axios";
 
 const CreateAcc = () => {
   {
+
+
     const [formData, setFormData] = useState({
       fullName: '',
       email: '',
       password: '',
       dateOfBirth: '',
       gender: '',
+      genderprefrence: '',
       location: { lat: null, lng: null },
     });
 
@@ -40,7 +43,7 @@ const CreateAcc = () => {
       e.preventDefault();
       try {
         const response = await axios.post("http://localhost:5000/createAcc", formData);
-        console.log("Account created:", response.data);
+        // console.log("Account created:", response.data);
         navigate('/'); // Sign In page pe redirect
       } catch (error) {
         console.error("Error:", error);
@@ -107,6 +110,18 @@ const CreateAcc = () => {
               className="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500"
             >
               <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+
+            <select
+              name="genderprefrence"
+              value={formData.genderprefrence}
+              onChange={handleChange}
+              className="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500"
+            >
+              <option value="">Gender Prefrence</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>

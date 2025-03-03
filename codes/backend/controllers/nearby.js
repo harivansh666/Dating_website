@@ -1,4 +1,7 @@
-const http = require("http");
-const socket = require("socket.io"); // socket.io nu chalon lai nttp server chida aa.
-const server = http.createServer(app);
-const io = socketio(server);
+const locationModel = require("../models/Location");
+
+const nearby = async (req, res) => {
+  console.log("hello nearby");
+};
+
+module.exports = { nearby };

@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import axios, { Axios } from 'axios'
+import axios from 'axios'
 
 const Nearby = () => {
-
-  axios.get('/"http://localhost:5000/nearby', {
-    
-  })
-
+  useEffect(() => {
+    const controller = new AbortController();
+    axios.get('http://localhost:5000/Nearby', {
+      withCredentials: true
+    })
+    return () => controller.abort();
+  }, [])
 
 
   return (
