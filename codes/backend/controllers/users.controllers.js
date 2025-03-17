@@ -8,6 +8,7 @@ const login = async (req, res) => {
 
   // Implementing some basic validation for email and password here.
   const user = await userModel.findOne({ email: email });
+  console.log(user);
 
   if (!user) {
     return res.status(400).json({ message: "User not found" });
@@ -18,7 +19,6 @@ const login = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid password" });
     }
-    // res.send("hello buddy");
     const token = jwt.sign({ email: email, password: password }, "shhhhh");
     res.cookie("token", token);
     res.status(200).json({ message: "Login successful" }); // iss line krke login hoya
@@ -38,7 +38,7 @@ const createuser = async (req, res) => {
     } = req.body;
 
     if (
-      !fullName?.trim() ||
+      !fullName?.trim() || // ? means me pakka ne pta ke value hai ya nahi, ! je value hai ta false dihuga nahi ta true.
       !email?.trim() ||
       !password?.trim() ||
       !dateOfBirth ||

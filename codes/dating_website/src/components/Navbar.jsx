@@ -1,15 +1,22 @@
-import { React, useRef, useState } from "react";
+import { React, useContext, useRef, useState } from "react";
 import { people } from "../data/People";
 import { IoMdNotifications } from "react-icons/io";
 import { AiFillMessage } from "react-icons/ai";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import "../Styles/Navbar.css"; // Import external CSS for animations
 import { detailStory } from "../data/detailStory"; // Assuming this array contains the details images
+import { Aicontext } from "../context/Main.context";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Navbar = ({ handleAiDate }) => {  // Receive handleAiDate as prop from App
+const Navbar = () => {  // Receive handleAiDate as prop from App
+
+  const { aitips, settips } = useContext(Aicontext);
+
+  const handleAiDate = () => {
+    settips(true);
+  }
 
   const [detailImages, setDetailImages] = useState(false);
   const [selectedDetailImage, setSelectedDetailImage] = useState(null);
@@ -44,7 +51,7 @@ const Navbar = ({ handleAiDate }) => {  // Receive handleAiDate as prop from App
 
   return (
     <>
-      <div className="w-full flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
+      <div className="w-full  flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
         {/* Logo */}
         <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1>
 
@@ -81,11 +88,13 @@ const Navbar = ({ handleAiDate }) => {  // Receive handleAiDate as prop from App
 
         {/* Animated Button */}
         <div className="mt-4 md:mt-3  ml-[50px] ">
+
           <button
             onClick={handleAiDate}  // Trigger the handleAiDate function passed as prop
             className="relative bg-pink-500 px-5 py-2 md:px-7 md:py-3 rounded font-bold text-white cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group overflow-hidden">
             Dating Tips <br />
             <span className="text-lg md:text-2xl text-black inline-block wiggle">Using AI</span>
+
             {/* Sparklesg */}
             <span className="absolute inset-0 pointer-events-none">
               <span className="absolute w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 sparkle top-1 left-1"></span>

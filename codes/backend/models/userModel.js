@@ -47,6 +47,14 @@ const userSchema = new mongoose.Schema({
       ref: "posts",
     },
   ],
+
+  matches: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+    },
+  ],
+
   location: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "location",

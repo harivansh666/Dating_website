@@ -42,7 +42,7 @@ const SignIn = () => {
   return (
 
     <form onSubmit={handleSubmit}>
-      <div className="flex h-screen bg-pink-600 p-10">
+      <div className="flex h-screen bg-pink-600 p-2">
         {/* Left Section */}
         <div className="h-110 w-80 mt-30 ml-4 absolute">
           <img src={Dancers} alt=""
@@ -94,7 +94,7 @@ const SignIn = () => {
         </div>
 
         {/* Right Section */}
-        <div className="w-140 flex items-center justify-center relative">
+        <div className="w-140 flex items-center justify-center mt-1 relative">
           <div className="absolute top-10 left-10">
             <img src={plane} alt="Smiling man" className="w-full rounded-lg" />
           </div>
