@@ -14,7 +14,10 @@ router.post("/createAcc", createuser);
 router.get("/logout", logout);
 
 router.get("/home", protectRoute, (req, res) => {
-  res.console.log(`Welcome to Home,`);
+  res.send({
+    message: "Welcome to Home",
+    user: req.user,
+  });
 });
 
 module.exports = router;

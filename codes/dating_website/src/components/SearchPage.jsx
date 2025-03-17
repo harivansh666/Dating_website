@@ -3,17 +3,22 @@ import Sidebar from './Sidebar';
 import { React, useState } from 'react';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import { IoIosHeart } from "react-icons/io";
-
 import { TbXboxXFilled } from 'react-icons/tb';
 import { searchPeople } from '../data/SeachPeople';
 import "../Styles/SearchPeople.css"
+
 import Navbar from './Navbar';
 
 const SearchPage = () => {
+
   const [isred, setred] = useState(false);
+  const [ProLike, setproLike] = useState(false);
+
+  const proLike = () => {
+    setproLike(!ProLike);
+  }
 
   const changeCol = () => {
-
     setred(!isred);
   }
 
@@ -94,11 +99,10 @@ const SearchPage = () => {
               </div>
 
               {/* Heart Icon */}
-              <AiFillHeart className="text-amber-400 hover:text-amber-600 cursor-pointer text-2xl ml-2 transition-colors duration-200" />
+              <AiFillHeart onClick={proLike} className={`${ProLike ? 'text-rose-500' : 'text-rose-300'} "ProLikecursor-pointer text-2xl ml-2 transition-colors duration-200`} />
             </div>
           ))}
         </div>
-
       </div>
 
     </>
