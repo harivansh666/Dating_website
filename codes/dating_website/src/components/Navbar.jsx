@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
+import { React, useRef, useState } from "react";
 import { people } from "../data/People";
 import { IoMdNotifications } from "react-icons/io";
 import { AiFillMessage } from "react-icons/ai";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import Sidebar from "./Sidebar";
 import "../Styles/Navbar.css"; // Import external CSS for animations
 import { detailStory } from "../data/detailStory"; // Assuming this array contains the details images
+
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Navbar = ({ handleAiDate }) => {  // Receive handleAiDate as prop from App
 
@@ -24,6 +26,14 @@ const Navbar = ({ handleAiDate }) => {  // Receive handleAiDate as prop from App
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
+  };
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    axios.get("http://localhost:5000/logout", {
+      withCredentials: true,
+    });
+    navigate("/");
   };
 
   // Handle clicking on an image to show the detail image
@@ -85,7 +95,6 @@ const Navbar = ({ handleAiDate }) => {  // Receive handleAiDate as prop from App
           </button>
         </div>
 
-
         {/* Notification Icons */}
         <div className="flex gap-4 md:gap-6 mt-4 md:mt-0">
           <div className="relative">
@@ -94,6 +103,7 @@ const Navbar = ({ handleAiDate }) => {  // Receive handleAiDate as prop from App
           <div className="relative">
             <AiFillMessage className="text-white text-3xl md:text-4xl cursor-pointer p-2 rounded-full bg-gradient-to-r from-pink-500 to-red-500 hover:scale-110 hover:shadow-xl hover:shadow-pink-400 transition-all hover:text-yellow-500 hover:animate-pulse" />
           </div>
+          <button className="bg-white mt-1 w-20 h-10 text-black px-4 py-2 rounded-md" onClick={handleLogout}>Logout</button>
         </div>
       </div>
 
