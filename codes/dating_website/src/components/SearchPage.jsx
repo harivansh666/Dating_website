@@ -8,6 +8,7 @@ import { searchPeople } from '../data/SeachPeople';
 import "../Styles/SearchPeople.css"
 
 import Navbar from './Navbar';
+import Scrollbar from './Scrollbar';
 
 const SearchPage = () => {
 
@@ -24,13 +25,13 @@ const SearchPage = () => {
 
   return (
     <>
-      <Navbar className />
-      <div className="flex ">
+      <Navbar />
+      <div className=" h-screen w-full flex flex-row ">
         <Sidebar />
-        <div className="h-[82vh] flex flex-col bg-yellow-300  w-[45vw] pl-44 justify-center">
+        <div className=" mt-1 w-[45vw]   justify-start">
 
-          <div className="bg-gray-100 p-4 h-[10vh] w-[30vw] rounded-2xl flex gap-2">
-            <select className="p-2 rounded-md outline-none">
+          <div className="flex bg-gray-100 h-[10vh] w-[30vw] ml-30   justify-center items-center rounded-2xl  gap-2 sm:gap-0 md:h-[12vh] md:text-[18px]">
+            <select className="p-2 rounded-md outline-none  md:p-1 ">
               <option value="">Select Location</option>
               <option value="new_york">New York</option>
               <option value="los_angeles">Los Angeles</option>
@@ -48,7 +49,7 @@ const SearchPage = () => {
             <div>
               <h1 className="text-3xl ">|</h1>
             </div>
-            <select className="p-2 rounded-md">
+            <select className="p-2 rounded-md ">
               <option value="">Select Age</option>
               <option value="18-25">18-25</option>
               <option value="26-35">26-35</option>
@@ -57,19 +58,11 @@ const SearchPage = () => {
           </div>
 
           {/* image div*/}
-          <div className="h-[60vh] w-[24vw] rounded-4xl mt-6 ml-10 relative">
-            <img
-              className="object-cover w-full h-full rounded-4xl"
-              src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGV0fGVufDB8fDB8fHww"
-              alt=""
-            />
-            <div className="absolute items-center justify-center flex gap-6 right-15  top-96">
-              <TbXboxXFilled className="text-white text-6xl cursor-pointer" />
-              <IoIosHeart onClick={changeCol} className={`${isred ? 'text-red-500' : 'text-white'} cursor-pointer text-8xl `} />
-              <BsFillQuestionCircleFill className="text-white text-5xl cursor-pointer" />
-            </div>
+          <div className='ml-1'>
+
           </div>
 
+            <Scrollbar />
         </div>
 
         {/* Search people div */}

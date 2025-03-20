@@ -25,7 +25,7 @@ app.use(
   })
 );
 
-app.use("/", authRoutes, NearByRoutes); //base url + route path.
+app.use("/", authRoutes, NearByRoutes, ProjfileRoutes); //base url + route path.
 // inal URLs ban jayengi:
 // Base URL + Route Path
 // "/" + "login" = "/login"

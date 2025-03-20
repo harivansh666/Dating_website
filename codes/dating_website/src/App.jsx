@@ -10,6 +10,7 @@ import SignIn from './Pages/SignIn';
 import Nearby from './components/Nearby';
 import CreateAcc from './Pages/CreateAcc';
 import AicontextProvider from './context/Main.context';
+import Profile from './Pages/Profile';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           {/* <Route path={'/createAcc'} element={<CreateAcc/>} /> */}
           <Route path={'/Nearby'} element={<Nearby />} />
           <Route path={'/createAcc'} element={<CreateAcc />} />
+          <Route path={'/profile'} element={<Profile />} />
         </Routes>
       </BrowserRouter>
 

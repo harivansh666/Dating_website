@@ -31,9 +31,6 @@ const MainHome = ({} ) => {
       });
   }, []);
 
-
-
-
   return (
     <>
       {error ? (
@@ -41,7 +38,7 @@ const MainHome = ({} ) => {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-red-500 mb-4">{error}</h2>
             <button
-              onClick={() => window.location.href = '/login'}
+              onClick={() => window.location.href = '/'}
               className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600"
             >
               Go to Login
