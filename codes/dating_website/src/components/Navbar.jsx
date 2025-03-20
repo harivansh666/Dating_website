@@ -51,7 +51,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
 
   return (
     <>
-      <div className="w-full  flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
+      <div className="w-full flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
         {/* Logo */}
         <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1>
 

@@ -6,11 +6,11 @@ export default function Matchbutton({ scrollRight, scrollLeft }) {
         <>
 
             <FaArrowAltCircleLeft
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 text-4xl bg-orange-500 text-white cursor-pointer z-10"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 text-4xl  text-white cursor-pointer z-10"
                 onClick={scrollLeft}
             />
             <FaArrowAltCircleRight
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 text-4xl bg-orange-500 text-white cursor-pointer z-10"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 text-4xl  text-white cursor-pointer z-10"
                 onClick={scrollRight}
             />
 
