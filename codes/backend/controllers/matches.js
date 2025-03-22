@@ -1,26 +1,14 @@
-const Match = require("../models/Match");
+const userModel = require("../models/userModel");
+
+const getMatch = async (req, res) => {
+  console.log("this is getMatches route");
+};
 
 const swipeRight = async (req, res) => {
-  const { likedUserId } = req.params;
+  res.send("hello world");
+  console.log("this is swipeRight route");
 };
-
-const swipeLeft = async (req, res) => {
-  const { likedUserId } = req.params;
-};
-
-const getMatches = async (req, res) => {
-  try {
-    const { user } = req;
-    const matches = await Match.find({
-      $or: [{ user: user._id }, { matchedUser: user._id }],
-    });
-    res.status(200).json(matches);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-module.exports = { swipeRight, swipeLeft, getMatches };
+module.exports = { getMatch, swipeRight };
 
 /*
 swipeRight:

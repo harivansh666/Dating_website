@@ -9,13 +9,13 @@ import axios from "axios";
 
 
 
-const MainHome = ({} ) => {
+const MainHome = ({ }) => {
   const slider = useRef(null);
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/home", {
+    axios.get("http://localhost:5000/api/home", {
       withCredentials: true,
     })
       .then((res) => {
@@ -46,7 +46,7 @@ const MainHome = ({} ) => {
           </div>
         </div>
       ) : (
-        
+
         <div>
           <Navbar />
 

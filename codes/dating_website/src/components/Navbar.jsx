@@ -37,7 +37,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    axios.get("http://localhost:5000/logout", {
+    axios.get("http://localhost:5000/api/logout", {
       withCredentials: true,
     });
     navigate("/");

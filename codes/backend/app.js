@@ -6,15 +6,20 @@ const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 
+// import middleware
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+//middleware
+
 //routes
 const ProjfileRoutes = require("./routes/ProjfileRoutes");
 const authRoutes = require("./routes/authRoutes");
 const NearByRoutes = require("./routes/NearByRoutes");
+const matchRoutes = require("./routes/matchRoutes");
 
 const server = http.createServer(app);
 
@@ -25,7 +30,7 @@ app.use(
   })
 );
 
-app.use("/", authRoutes, NearByRoutes, ProjfileRoutes); //base url + route path.
+app.use("/api", authRoutes, NearByRoutes, ProjfileRoutes, matchRoutes); //base url + route path.
 // inal URLs ban jayengi:
 // Base URL + Route Path
 // "/" + "login" = "/login"
