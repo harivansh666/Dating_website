@@ -17,7 +17,7 @@ const protectRoute = async (req, res, next) => {
     const user = await userModel.findOne({
       email: tokenData.email,
     });
-    console.log("User found:", user);
+    // console.log("User found: auth", user);
 
     if (!user) {
       console.log("No user found with token data");
@@ -30,6 +30,9 @@ const protectRoute = async (req, res, next) => {
     console.log("Error in auth middleware:", error);
     return res.status(401).json({ message: "Token is not valid" });
   }
+};
+const home = async () => {
+  return console.log("Home Page");
 };
 
 module.exports = { protectRoute };

@@ -8,7 +8,7 @@ const login = async (req, res) => {
 
   // Implementing some basic validation for email and password here.
   const user = await userModel.findOne({ email: email });
-  console.log(user);
+  // console.log(user);
 
   if (!user) {
     return res.status(400).json({ message: "User not found" });

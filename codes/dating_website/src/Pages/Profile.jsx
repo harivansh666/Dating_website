@@ -26,7 +26,7 @@ export default function Profile() {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/profile', {
+                const response = await axios.get('http://localhost:5000/api/profile', {
                     withCredentials: true
                 })
 
@@ -48,7 +48,7 @@ export default function Profile() {
     const sendData = async (e) => {
         try {
             // console.log(user);
-            const response = await axios.post('http://localhost:5000/profile', user, {
+            const response = await axios.post('http://localhost:5000/api/profile', user, {
                 withCredentials: true
             })
             setrespond(response.data)

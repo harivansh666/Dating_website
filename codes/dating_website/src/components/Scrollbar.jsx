@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { mainHomeSlider } from "../data/MainHomeSlider";
-
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { TbXboxXFilled } from "react-icons/tb";
 import { IoIosHeart } from "react-icons/io";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import Matchbutton from "./Buttons/Match.button";
+import axios from "axios";
+
 
 
 
@@ -23,11 +23,31 @@ export default function Scrollbar() {
         }
     };
 
-    const scrollRight = () => {
+    const scrollRight = async () => {
         if (slider.current) {
             slider.current.scrollBy({ left: 300, behavior: "smooth" });
         }
+        const response = await axios.post('http://localhost:5000/api/home/swipeL')
+        console.log(response);
+
     };
+
+    // send back current user 
+
+    useEffect(() => {
+        // send back current user to the matches page
+        // history.push('/matches')
+
+        axios.get('http://localhost:5000/api/home').then((res) => {
+            console.log(res.data);
+        })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+    );
+
+
 
     return (
         <>
@@ -44,7 +64,7 @@ export default function Scrollbar() {
                         />
                     ))}
 
-                    {/* Floating Icons at Bottom */}
+                    Floating Icons at Bottom
                     <div className=" absolute left-1/2  md:top-75 top-90 transform -translate-x-1/2  flex items-center gap-4 p-3 rounded-lg">
 
                         <TbXboxXFilled className="text-white text-5xl md:text-4xl  cursor-pointer" />
