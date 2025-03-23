@@ -9,7 +9,7 @@ const { getMatch, swipeRight } = require("../controllers/matches");
 router.get("/home", home);
 // swipe right
 // router.post("/swipeR/:likedUserId", protectedRoute, swipeRight);
-router.post("/home/swipeL", swipeRight);
+router.post("/home/swipeL", protectRoute, swipeRight);
 
 // swipe left
 // router.post("/home/swipe-left/:likedUserId", protectedRoute, swipeLeft);

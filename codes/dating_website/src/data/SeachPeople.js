@@ -5,7 +5,7 @@ export const searchPeople = [
     age: 28,
     location: "Mumbai, India",
     Image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
     bio: "Aarav is a 28-year-old Indian man who loves exploring new cultures, trying out different foods, and learning about different traditions",
   },
   {
@@ -14,7 +14,7 @@ export const searchPeople = [
     age: 34,
     location: "New York, USA",
     Image:
-      "https://images.unsplash.com/photo-1484863137850-59afcfe05386?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1519764622345-23439dd774f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D",
 
     bio: "Aarav is a 28-year-old Indian man who loves exploring new cultures, trying out different foods, and learning about different traditions",
   },
@@ -24,7 +24,7 @@ export const searchPeople = [
     age: 25,
     location: "London, UK",
     Image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
     bio: "Aarav is a 28-year-old Indian man who loves exploring new cultures, trying out different foods, and learning about different traditions",
   },
   {
@@ -33,7 +33,7 @@ export const searchPeople = [
     age: 30,
     location: "Madrid, Spain",
     Image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGVvcGxlfGVufDB8fDB8fHww",
     bio: "Aarav is a 28-year-old Indian man who loves exploring new cultures, trying out different foods, and learning about different traditions",
   },
   {
@@ -42,7 +42,7 @@ export const searchPeople = [
     age: 40,
     location: "Beijing, China",
     Image:
-      "https://plus.unsplash.com/premium_photo-1669882305339-8e2cbb81903e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1543132220-3ec99c6094dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8",
     bio: "Aarav is a 28-year-old Indian man who loves exploring new cultures, trying out different foods, and learning about different traditions",
   },
   {

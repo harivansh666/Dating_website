@@ -5,8 +5,21 @@ const getMatch = async (req, res) => {
 };
 
 const swipeRight = async (req, res) => {
-  res.send("hello world");
-  console.log("this is swipeRight route");
+  try {
+    const { ProfileUser } = req.body;
+    const currentUserId = req.user.id;
+
+    const currentUser = await userModel.findById(currentUserId);
+
+    currentUser.likes.push(ProfileUser);
+    await currentUser.save();
+
+    res.send("hello world");
+    console.log("User who was swiped right:", ProfileUser);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server Error" });
+  }
 };
 module.exports = { getMatch, swipeRight };
 
