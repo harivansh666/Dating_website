@@ -47,6 +47,13 @@ export default function Profile() {
     // console.log(responseData);
     const sendData = async (e) => {
         try {
+            if (user.fullName === '') {
+                return alert("Please enter Full Name");
+            }
+            if (user.bio === '') {
+                return alert("Please enter Bio");
+            }
+
             // console.log(user);
             const response = await axios.post('http://localhost:5000/api/profile', user, {
                 withCredentials: true
@@ -100,7 +107,7 @@ export default function Profile() {
                                     <div className='w-100 h-40 flex  mt-8 absoulate gap-1 flex-col  '>
                                         <h1 className='text-3xl font-bold text-left uppercase'>{responseData.fullName} </h1>
 
-                                        <p className='text-start
+                                        <p className='text-start w-86 h-42
  outline-2 p-1 rounded-md outline-zinc-300'>{responseData.bio}</p>
                                     </div>
 

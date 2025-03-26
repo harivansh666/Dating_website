@@ -18,11 +18,28 @@ export default function Scrollbar() {
         setred(!isred);
     }
 
-    const scrollLeft = () => {
+    const scrollLeft = async () => {
         if (slider.current) {
             slider.current.scrollBy({ left: -200, behavior: "smooth" });
             setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+        }
+        const ProfileUser = searchPeople[currentIndex].name;
 
+        try {
+            const response = await axios.post('http://localhost:5000/api/home/swipeL', {
+
+                ProfileUser,
+            },
+
+                {
+                    withCredentials: true
+                }
+            );
+
+            console.log(response.data);
+
+        } catch (err) {
+            console.error(err);
         }
 
 
@@ -36,7 +53,7 @@ export default function Scrollbar() {
 
         const ProfileUser = searchPeople[currentIndex].name;
         try {
-            const response = await axios.post('http://localhost:5000/api/home/swipeL', {
+            const response = await axios.post('http://localhost:5000/api/home/swipeR', {
 
                 ProfileUser,
             },
@@ -45,17 +62,11 @@ export default function Scrollbar() {
                     withCredentials: true
                 }
             );
-            console.log(response);
-
+            console.log(response.data);
         } catch (err) {
             console.error(err);
         }
     };
-
-
-
-
-    // send back current user 
 
     // useEffect(() => {
     // send back current user to the matches page

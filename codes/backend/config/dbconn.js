@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/DatingWebsite");
+mongoose.connect(process.env.mongodb_uri);
+// console.log(process.env.mongodb_uri);
 
 const db = mongoose.connection;
 

@@ -2,31 +2,73 @@ const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const locationModel = require("../models/Location");
+const { z } = require("zod");
+
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string(),
+});
 
 const login = async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    // const { email, password } = req.body;
+    const parsedData = loginSchema.safeParse(req.body);
 
-  // Implementing some basic validation for email and password here.
-  const user = await userModel.findOne({ email: email });
-  // console.log(user);
-
-  if (!user) {
-    return res.status(400).json({ message: "User not found" });
-  }
-
-  bcrypt.compare(password, user.password, (err, isMatch) => {
-    if (err) throw err;
-    if (!isMatch) {
-      return res.status(400).json({ message: "Invalid password" });
+    if (!parsedData.success) {
+      return res
+        .status(400)
+        .json({ message: "Invalid data", data: parsedData.error.error });
     }
-    const token = jwt.sign({ email: email, password: password }, "shhhhh");
-    res.cookie("token", token);
-    res.status(200).json({ message: "Login successful" }); // iss line krke login hoya
-  });
+    const { email, password } = parsedData.data;
+
+    const user = await userModel.findOne({ email: email });
+    // console.log(user);
+
+    if (!user) {
+      return res.status(400).json({ message: "User not found" });
+    }
+
+    bcrypt.compare(password, user.password, (err, isMatch) => {
+      if (err) throw err;
+      if (!isMatch) {
+        return res.status(400).json({ message: "Invalid password" });
+      }
+      const token = jwt.sign({ email: email, password: password }, "shhhhh");
+      res.cookie("token", token);
+      res.status(200).json({ message: "Login successful" }); // iss line krke login hoya
+    });
+  } catch (err) {
+    res.status(500).json({ message: "Server Error", err });
+  }
 };
+
+//=================================================================
+
+const createUserSchema = z.object({
+  fullName: z.string().min(3).max(20),
+  dateOfBirth: z.string().refine((val) => !isNaN(Date.parse(val)), {
+    message: "Invalid date format",
+  }),
+  gender: z.enum(["male", "female"]),
+  genderprefrence: z.enum(["male", "female"]),
+  email: z.string().email(),
+  password: z.string().min(6),
+  location: z.object({
+    lat: z.number(),
+    lng: z.number(),
+  }),
+});
 
 const createuser = async (req, res) => {
   try {
+    const parsedData = createUserSchema.safeParse(req.body);
+
+    if (!parsedData.success) {
+      return res
+        .status(400)
+        .json({ message: "Validation error", errors: parsedData.error.errors });
+    }
+
     const {
       fullName,
       email,
@@ -35,20 +77,7 @@ const createuser = async (req, res) => {
       gender,
       genderprefrence,
       location,
-    } = req.body;
-
-    if (
-      !fullName?.trim() || // ? means me pakka ne pta ke value hai ya nahi, ! je value hai ta false dihuga nahi ta true.
-      !email?.trim() ||
-      !password?.trim() ||
-      !dateOfBirth ||
-      !gender?.trim() ||
-      !genderprefrence?.trim() ||
-      !location?.lat ||
-      !location?.lng
-    ) {
-      return res.status(400).json({ message: "All fields are required" });
-    }
+    } = parsedData.data;
 
     // Calculate age from dateOfBirth
     const birthDate = new Date(dateOfBirth);
@@ -99,5 +128,6 @@ const createuser = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
 
 module.exports = { login, createuser };

@@ -6,7 +6,8 @@ const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 
-// import middleware
+//import services
+const socketServices = require("./services/socketServices");
 
 const app = express();
 app.use(express.json());
@@ -37,6 +38,8 @@ app.use("/api", authRoutes, NearByRoutes, ProjfileRoutes, matchRoutes); //base u
 // "/" + "createAcc" = "/createAcc"
 
 // app.use("/", NearByRoutes);
+
+socketServices.Init(server);
 
 server.listen(process.env.port, () => {
   console.log(`Backend is Running on ${process.env.port}`);
