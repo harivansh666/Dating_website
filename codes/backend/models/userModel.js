@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
 
   matches: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       ref: "user",
     },
   ],
@@ -65,16 +65,14 @@ const userSchema = new mongoose.Schema({
   },
   likes: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      type: String,
       default: null,
     },
   ],
 
   dislikes: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      type: String,
       default: null,
     },
   ],

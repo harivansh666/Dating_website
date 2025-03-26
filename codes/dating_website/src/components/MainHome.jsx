@@ -6,12 +6,15 @@ import { mainHomeSlider } from "../data/MainHomeSlider";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import axios from "axios";
+import { io } from "socket.io-client";
 
+const 
 
 
 const MainHome = ({ }) => {
   const slider = useRef(null);
   const [userData, setUserData] = useState(null);
+  const [isAiopen, isAiclosed] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -29,8 +32,14 @@ const MainHome = ({ }) => {
           setError("Something went wrong");
         }
       });
+
+    io.on('connect', (socket) => {
+      console.log('user connected form frontend side');
+    })
+
   }, []);
 
+  console.log(userData);
   return (
     <>
       {error ? (
@@ -50,16 +59,12 @@ const MainHome = ({ }) => {
         <div>
           <Navbar />
 
-
-
           <div className=" flex  h-[calc(100vh-140px)] ">
             <Sidebar />
             <AItips />
             <Scrollbar />
 
           </div>
-
-
         </div>
       )}
     </>
