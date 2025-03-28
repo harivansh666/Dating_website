@@ -6,9 +6,6 @@ import { mainHomeSlider } from "../data/MainHomeSlider";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import axios from "axios";
-import { io } from "socket.io-client";
-
-const 
 
 
 const MainHome = ({ }) => {
@@ -33,9 +30,6 @@ const MainHome = ({ }) => {
         }
       });
 
-    io.on('connect', (socket) => {
-      console.log('user connected form frontend side');
-    })
 
   }, []);
 

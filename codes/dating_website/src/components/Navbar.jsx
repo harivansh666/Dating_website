@@ -53,10 +53,12 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
     <>
       <div className="w-full flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
         {/* Logo */}
-        <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1>
+        {/* <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1> */}
+        <img src="./src/assets/logo-2.png" className="h-24  " alt="logo" />
+
 
         {/* People Avatars - Instagram Story Slider */}
-        <div className="flex items-center gap-2 md:gap-4 w-[60vw]">
+        <div className="flex items-center gap-2 ml-18 md:gap-4 w-[60vw]">
           <button
             onClick={scrollLeft}
             className="text-white text-3xl cursor-pointer focus:outline-none"
@@ -65,7 +67,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
           </button>
           <div
             ref={scrollRef}
-            className="flex gap-3 overflow-x-scroll scrollbar-hide whitespace-nowrap scroll-smooth"
+            className="flex gap-3overflow-x-scroll scrollbar-hide whitespace-nowrap scroll-smooth"
             style={{ width: "1000px", overflow: "hidden" }}
           >
             {people.map((e, i) => (
@@ -87,7 +89,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
         </div>
 
         {/* Animated Button */}
-        <div className="mt-4 md:mt-3  ml-[50px] ">
+        <div className="mt-4 md:mt-3 ">
 
           <button
             onClick={handleAiDate}  // Trigger the handleAiDate function passed as prop
