@@ -24,7 +24,7 @@ const server = http.createServer(app);
 
 app.use(
   cors({
-    origin: 'https://vibelydating.netlify.app/',
+    origin: 'https://vibelydating.netlify.app',
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true,
      allowedHeaders: ['Content-Type', 'Authorization']
