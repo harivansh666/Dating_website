@@ -24,10 +24,13 @@ const server = http.createServer(app);
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
+    origin: ['http://localhost:5173', 'https://vibelydating.onrender.com'],
+    methods: 'GET,POST,PUT,DELETE,PATCH',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
   })
 );
+
 
 app.use("/api", authRoutes, NearByRoutes, ProjfileRoutes, matchRoutes); //base url + route path.
 // final URLs ban jayengi:
