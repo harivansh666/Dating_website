@@ -39,6 +39,7 @@ res.cookie("token", token, {
   secure: true,
   sameSite: 'none',
   maxAge: 24 * 60 * 60 * 1000, // 1 day
+   domain: '.onrender.com',
   path: '/',
 });
       res.status(200).json({ message: "Login successful" }); // iss line krke login hoya
