@@ -1,6 +1,6 @@
 ﻿# Dating_website
 
-<h2>You can check this:- https://aicoderreviewer-1.onrender.com/</h2>
+<h2>You can check this:- https://vibelydating.netlify.app/ </h2>
 AICodeReviewer
 🚀 A powerful MERN stack project leveraging AI-powered code review with Gemini
 
