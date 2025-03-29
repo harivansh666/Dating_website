@@ -76,7 +76,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
       <div className="w-full flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
         {/* Logo */}
         {/* <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1> */}
-        <img src="https://photos.app.goo.gl/C9NsoX7pA31orrhp9" className="h-24  " alt="logo" />
+        <img src="https://ibb.co/4ZmtqYJC" className="h-24  " alt="logo" />
 
 
         {/* People Avatars - Instagram Story Slider */}
