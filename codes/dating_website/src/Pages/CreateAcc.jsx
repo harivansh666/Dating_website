@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'; // Import Link
 import axios from "axios";
+import twitter from "../images/exported/artboard 1/twitter.png";
+import facebook from "../images/exported/artboard 1/facebook.png";
+import search from "../images/exported/artboard 1/search.png";
+
 
 const CreateAcc = () => {
   {
@@ -136,13 +140,13 @@ const CreateAcc = () => {
             <p className="text-gray-600">Or sign up with</p>
             <div className="flex justify-center gap-4 mt-2">
               <button className="bg-white border p-2 rounded-full shadow hover:bg-gray-100">
-                <img src="/search.png" alt="Google" className="w-6" />
+                <img src={search} alt="Google" className="w-6" />
               </button>
               <button className="bg-white border p-2 rounded-full shadow hover:bg-gray-100">
-                <img src="/facebook.png" alt="Facebook" className="w-6" />
+                <img src={facebook} alt="Facebook" className="w-6" />
               </button>
               <button className="bg-white border p-2 rounded-full shadow hover:bg-gray-100">
-                <img src="/twitter.png" alt="Twitter" className="w-6" />
+                <img src={twitter} alt="Twitter" className="w-6" />
               </button>
             </div>
           </div>
