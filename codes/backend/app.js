@@ -27,7 +27,6 @@ app.use(
     origin: 'https://vibelydating.onrender.com',
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true,
-      exposedHeaders: ['set-cookie'],
      allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
