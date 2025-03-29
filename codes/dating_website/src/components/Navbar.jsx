@@ -6,7 +6,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import "../Styles/Navbar.css"; // Import external CSS for animations
 import { detailStory } from "../data/detailStory"; // Assuming this array contains the details images
 import { Aicontext } from "../context/Main.context";
-import {logo} from "./src/assets/logo-2.png";
+
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -76,7 +76,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
       <div className="w-full flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
         {/* Logo */}
         {/* <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1> */}
-        <img src={logo} className="h-24  " alt="logo" />
+        <img src="./src/assets/logo-2.png" className="h-24  " alt="logo" />
 
 
         {/* People Avatars - Instagram Story Slider */}
