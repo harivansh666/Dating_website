@@ -26,7 +26,7 @@ export default function Profile() {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/profile', {
+                const response = await axios.get('https://vibely-5kiw.onrender.com', {
                     withCredentials: true
                 })
 

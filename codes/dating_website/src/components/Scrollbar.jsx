@@ -58,7 +58,7 @@ export default function Scrollbar() {
         const ProfileUser = searchPeople[currentIndex].name;
 
         try {
-            const response = await axios.post('http://localhost:5000/api/home/swipeR', {
+            const response = await axios.post('https://vibely-5kiw.onrender.com', {
 
                 ProfileUser,
             },
@@ -78,7 +78,7 @@ export default function Scrollbar() {
         setAibio(searchPeople[currentIndex].bio);
     }, [currentIndex, setAibio]);
 
-    
+
 
     return (
         <>
