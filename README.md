@@ -6,9 +6,8 @@ AICodeReviewer
 🚀 A powerful MERN stack project leveraging AI-powered code review with Gemini
 
 
-🔹 Overview
+🔹 <h2> Overview </h2> <br>
 Vibely is a Dating website built using the MERN stack (MongoDB, Express, React, Node.js).
-
 
 <h1> 🚀 Setup & Installation </h1> <br>
 git clone https://github.com/harivansh666/AICoderReviewer.git  <br>
@@ -18,7 +17,7 @@ git clone https://github.com/harivansh666/AICoderReviewer.git  <br>
 🔹npm start <br>
 
 <h2> For Backend Setup </h2> 
-🔹cd cd codes/backend 
+🔹cd codes/backend  <br>
 🔹npx nodemon app.js
 
 <h2> 🛠️ Tech Stack </h2> <br>
