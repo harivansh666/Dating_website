@@ -31,9 +31,8 @@ const Nearby = () => {
       <Navbar />
       <div className="flex">
         <Sidebar />
-
-        <div className="flex  items-center flex-col w-[1350px] bg-pink-500">
-          <h2 className=" uppercase font-bold text-white text-2xl mt-2 mb-2">🎯 click on location icon and get detail of partner 🚀</h2>
+        <div className="flex w-full  items-center flex-col ">
+          <h2 className=" uppercase font-bold text-2xl mt-2 mb-2 text-pink-500">🎯 click on location icon and get detail of partner 🚀</h2>
 
           <div className="w-[900px] h-[500px] rounded-2xl bg-amber-100 overflow-hidden">
             {/* Debugging Lat/Lng */}

@@ -1,10 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { searchPeople } from "../data/SeachPeople";
 import { TbXboxXFilled } from "react-icons/tb";
 import { IoIosHeart } from "react-icons/io";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import Matchbutton from "./Buttons/Match.button";
 import axios from "axios";
+import { Aicontext } from "../context/Main.context";
+
 
 
 
@@ -13,6 +15,9 @@ export default function Scrollbar() {
     const [isred, setred] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const slider = useRef(null);
+
+    const { Aibio, setAibio } = useContext(Aicontext)
+
 
     const changeCol = () => {
         setred(!isred);
@@ -50,8 +55,8 @@ export default function Scrollbar() {
             slider.current.scrollBy({ left: 300, behavior: "smooth" });
         }
         setCurrentIndex((prevIndex) => (prevIndex < searchPeople.length - 1 ? prevIndex + 1 : prevIndex));
-
         const ProfileUser = searchPeople[currentIndex].name;
+
         try {
             const response = await axios.post('http://localhost:5000/api/home/swipeR', {
 
@@ -66,21 +71,14 @@ export default function Scrollbar() {
         } catch (err) {
             console.error(err);
         }
+
     };
 
-    // useEffect(() => {
-    // send back current user to the matches page
-    // history.push('/matches')
+    useEffect(() => {
+        setAibio(searchPeople[currentIndex].bio);
+    }, [currentIndex, setAibio]);
 
-    //     axios.get('http://localhost:5000/api/home').then((res) => {
-    //         console.log(res.data);
-    //     })
-    //         .catch(error => {
-    //             console.error(error);
-    //         });
-    // }
-    // );
-
+    
 
     return (
         <>

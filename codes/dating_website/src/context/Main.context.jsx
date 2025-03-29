@@ -1,13 +1,14 @@
 import { createContext, useState } from "react";
 
-export const Aicontext = createContext();
+export const Aicontext = createContext(null);
 
 export const AicontextProvider = ({ children }) => {
 
-    const [aitips, settips] = useState('');
+    const [Aibio, setAibio] = useState('')
+    const [Aires, setAires] = useState('')
 
     return (
-        <Aicontext.Provider value={{ aitips, settips }}>
+        <Aicontext.Provider value={{ Aibio, setAibio, Aires, setAires }}>
             {children}
         </Aicontext.Provider>
     )
