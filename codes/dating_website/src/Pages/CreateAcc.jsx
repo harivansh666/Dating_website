@@ -46,7 +46,7 @@ const CreateAcc = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post("http://localhost:5000/api/createAcc", formData);
+        const response = await axios.post("https://vibely-5kiw.onrender.com/api/createAcc", formData);
         console.log("Account created:", response.data);
         navigate('/'); // Sign In page pe redirect
       } catch (error) {
