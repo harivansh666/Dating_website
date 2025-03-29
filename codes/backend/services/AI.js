@@ -1,18 +1,10 @@
 const { GoogleGenAI } = require("@google/genai");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyD2yVd1fZTwcOsSmZQxpE_zrhZQwUoO4C4",
+  apiKey: process.env.gemini_api,
 });
-
-// const AiResponse = async (input) => {
-//   console.log(input);
-//   const response = await ai.models.generateContent({
-//     model: "gemini-2.0-flash",
-//     contents: `${input}`,
-//   });
-//   console.log(response.text);
-//   return response.text();
-// };
 
 const AiResponse = async (input) => {
   const response = await ai.models.generateContent({
