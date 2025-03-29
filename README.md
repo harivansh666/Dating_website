@@ -12,7 +12,7 @@ Vibely is a Dating website built using the MERN stack (MongoDB, Express, React, 
 <h1> 🚀 Setup & Installation </h1> <br>
 git clone https://github.com/harivansh666/AICoderReviewer.git  <br>
 
-🔹cd codes/dating_websie
+🔹cd codes/dating_websie <br> 
 🔹npm install <br>
 🔹npm start <br>
 
