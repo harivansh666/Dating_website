@@ -13,7 +13,7 @@ const Nearby = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://vibely-5kiw.onrender.com", {
+        const response = await axios.get("http://localhost:5000/api/Nearby", {
           withCredentials: true,
         });
         setPeople(response.data);

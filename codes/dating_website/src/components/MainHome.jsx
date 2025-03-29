@@ -19,7 +19,7 @@ const MainHome = ({ }) => {
 
 
   useEffect(() => {
-    axios.get("https://vibely-5kiw.onrender.com", {
+    axios.get("http://localhost:5000/api/home", {
       withCredentials: true,
     })
       .then((res) => {

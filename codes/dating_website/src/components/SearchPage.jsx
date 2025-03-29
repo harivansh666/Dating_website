@@ -5,7 +5,7 @@ import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import { IoIosHeart } from "react-icons/io";
 import { TbXboxXFilled } from 'react-icons/tb';
 import { searchPeople } from '../data/SeachPeople';
-import "../Styles/Searchpeople.css"
+import "../Styles/SearchPeople.css"
 
 import Navbar from './Navbar';
 import Scrollbar from './Scrollbar';
@@ -62,7 +62,7 @@ const SearchPage = () => {
 
           </div>
 
-          <Scrollbar />
+            <Scrollbar />
         </div>
 
         {/* Search people div */}
