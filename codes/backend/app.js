@@ -14,8 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 //routes
 const ProjfileRoutes = require("./routes/ProjfileRoutes");
 const authRoutes = require("./routes/authRoutes");
