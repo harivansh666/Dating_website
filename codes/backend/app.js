@@ -24,7 +24,7 @@ const server = http.createServer(app);
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: ['http://localhost:5173', 'https://vibely-skix.onrender.com']
     credentials: true,
   })
 );
