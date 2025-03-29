@@ -24,7 +24,7 @@ const server = http.createServer(app);
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://vibelydating.onrender.com'],
+    origin: 'https://vibelydating.onrender.com',
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true
   })
