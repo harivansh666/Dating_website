@@ -21,16 +21,16 @@ const NearByRoutes = require("./routes/NearByRoutes");
 const matchRoutes = require("./routes/matchRoutes");
 
 const server = http.createServer(app);
+app.use(cors())
 
-app.use(
-  cors({
-    origin: 'https://vibelydating.netlify.app',
-    methods: 'GET,POST,PUT,DELETE,PATCH',
-    credentials: true,
-     allowedHeaders: ['Content-Type', 'Authorization']
-  })
-);
-
+// app.use(
+//   cors({
+//     origin: 'https://vibelydating.netlify.app',
+//     methods: 'GET,POST,PUT,DELETE,PATCH',
+//     credentials: true,
+//      allowedHeaders: ['Content-Type', 'Authorization']
+//   })
+// );
 
 app.use("/api", authRoutes); //base url + route path.
 app.use("/api",  NearByRoutes, ); //base url + route path.
