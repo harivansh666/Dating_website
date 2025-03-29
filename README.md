@@ -30,8 +30,8 @@ Authentication: JWT
 Location:  React Leaflet maps
 
 <h2>Features</h2>
-left swipe dislike user store in database.
-right swipe like user store in database. 
+Left swipe dislike user store in database.
+Right swipe like user store in database. 
 
 <h2>Video Display</h2>
 https://github.com/user-attachments/assets/02ec6a3f-bbdc-46b8-9dbf-b9b8bba074ad
