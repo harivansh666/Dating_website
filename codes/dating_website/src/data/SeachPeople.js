@@ -128,7 +128,7 @@ export const searchPeople = [
   },
   {
     id: 4,
-    name: "Sofia Martinez",
+    name: "jaun Martinez",
     age: 30,
     location: "Vasai, India",
     latitude: 19.365,
@@ -172,7 +172,7 @@ export const searchPeople = [
   },
   {
     id: 8,
-    name: "Olivia Brown",
+    name: "Brown",
     age: 29,
     location: "Ulhasnagar, India",
     latitude: 19.2215,

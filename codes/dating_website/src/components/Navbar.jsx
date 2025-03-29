@@ -11,15 +11,17 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Navbar = () => {  // Receive handleAiDate as prop from App
+  const { Aibio, setAibio, Aires, setAires } = useContext(Aicontext)
 
-  const { aitips, settips } = useContext(Aicontext);
 
-  const handleAiDate = () => {
-    settips(true);
-  }
+  console.log(Aibio);
+  // const handleAiDate = () => {
+  //   settips(true);
+  // }
 
   const [detailImages, setDetailImages] = useState(false);
   const [selectedDetailImage, setSelectedDetailImage] = useState(null);
+  // const [Aiees, setAires] = useState('');
 
   const scrollRef = useRef(null);
 
@@ -49,6 +51,25 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
     setDetailImages(true); // Show the detailed image view
   };
 
+  const handleAiDate = async () => {
+    try {
+
+      const response = await axios.get("http://localhost:5000/api/home", {
+        params: { Aibio },
+        withCredentials: true,
+      }, {
+        withCredentials: true,
+      })
+      setAires(response.data)
+      console.log(response.data);
+
+    }
+    catch (error) {
+      console.error(error);
+    }
+
+
+  }
   return (
     <>
       <div className="w-full flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">

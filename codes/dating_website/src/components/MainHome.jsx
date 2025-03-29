@@ -1,11 +1,13 @@
 import { React, useState, useRef, useEffect } from "react";
 import AItips from "./AItips";
 import Scrollbar from "./Scrollbar";
-import { BsFillQuestionCircleFill } from "react-icons/bs";
-import { mainHomeSlider } from "../data/MainHomeSlider";
+// import { BsFillQuestionCircleFill } from "react-icons/bs";
+// import { mainHomeSlider } from "../data/MainHomeSlider";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import axios from "axios";
+// import Aicontext from "../context/Main.context";
+
 
 
 const MainHome = ({ }) => {
@@ -13,6 +15,8 @@ const MainHome = ({ }) => {
   const [userData, setUserData] = useState(null);
   const [isAiopen, isAiclosed] = useState(false);
   const [error, setError] = useState(null);
+
+
 
   useEffect(() => {
     axios.get("http://localhost:5000/api/home", {
@@ -33,7 +37,9 @@ const MainHome = ({ }) => {
 
   }, []);
 
-  console.log(userData);
+  // console.log(aitips);
+
+  // console.log(userData);
   return (
     <>
       {error ? (

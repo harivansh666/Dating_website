@@ -14,8 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-//middleware
-
 //routes
 const ProjfileRoutes = require("./routes/ProjfileRoutes");
 const authRoutes = require("./routes/authRoutes");
@@ -32,13 +30,12 @@ app.use(
 );
 
 app.use("/api", authRoutes, NearByRoutes, ProjfileRoutes, matchRoutes); //base url + route path.
-// inal URLs ban jayengi:
+// final URLs ban jayengi:
 // Base URL + Route Path
 // "/" + "login" = "/login"
 // "/" + "createAcc" = "/createAcc"
 
 // app.use("/", NearByRoutes);
-
 socketServices.Init(server);
 
 server.listen(process.env.port, () => {
