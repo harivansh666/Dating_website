@@ -52,7 +52,7 @@ const Nearby = () => {
               />
 
               {searchPeople.map((person) => (
-                <Marker key={person.id} position={[person.latitude, person.longitude]} icon={https://res.cloudinary.com/dnknnq5ef/image/upload/v1743279586/travel_15692612_vllzf2.png}>
+                <Marker key={person.id} position={[person.latitude, person.longitude]} >
                   <Popup>
                     <img src={person.Image} alt="" width="40" className="w-30" /> <br />
                     <b>{person.name}</b> <br />
