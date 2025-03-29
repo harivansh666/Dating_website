@@ -31,7 +31,10 @@ app.use(
 );
 
 
-app.use("/api", authRoutes,  NearByRoutes, ProjfileRoutes, matchRoutes); //base url + route path.
+app.use("/api", authRoutes); //base url + route path.
+app.use("/api",  NearByRoutes, ); //base url + route path.
+app.use("/api",  ProjfileRoutes); //base url + route path.
+app.use("/api", matchRoutes); //base url + route path.
 // final URLs ban jayengi:
 // Base URL + Route Path
 // "/" + "login" = "/login"
