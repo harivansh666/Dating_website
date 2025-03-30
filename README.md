@@ -8,7 +8,7 @@
 Vibely is a Dating website built using the MERN stack (MongoDB, Express, React, Node.js).
 
 <h1> 🚀 Setup & Installation </h1> <br>
-git clone https://github.com/harivansh666/AICoderReviewer.git  <br>
+git clone https://github.com/harivansh666/Dating_website.git  <br>
 
 🔹cd codes/dating_websie <br> 
 🔹npm install <br>
@@ -32,7 +32,6 @@ Left swipe dislike user store in database. <br>
 Right swipe like user store in database. <br>
 
 <h2>Video Display</h2>
-https://github.com/user-attachments/assets/02ec6a3f-bbdc-46b8-9dbf-b9b8bba074ad
 
 ✅ Integrated Gemini AI for Generating ai tips according to profile (target) profile , <br>
 ✅ Optimized performance & scalability, <br>
