@@ -29,12 +29,18 @@ Database: MongoDB <br>
 AI Integration: Google Gemini API <br>
 Authentication: JWT <br>
 Location:  React Leaflet maps <br>
+ui/ux: Photoshop
 
 <h2>Features</h2>
 Left swipe dislike user store in database. <br>
 Right swipe like user store in database. <br>
 Integrated Gemini AI for Generating ai tips according to profile (target) profile , <br>
-<h2>Video Display</h2>
+
+![Screenshot 2025-03-30 103106](https://github.com/user-attachments/assets/0563d4bb-54c0-4d64-a134-3db3d95ed445)
+![Screenshot 2025-03-30 103126](https://github.com/user-attachments/assets/91809f6b-f0b6-47ea-81b4-a23a92228c95)
+![Screenshot 2025-03-30 104516](https://github.com/user-attachments/assets/b35f34db-2443-45f0-b48b-a886da81810f)
+![Screenshot 2025-03-30 103155](https://github.com/user-attachments/assets/0073389d-365f-4059-af58-7c187d7fa21e)
+
 
 ✅ Integrated Gemini AI for Generating ai tips according to profile (target) profile , <br>
 ✅ Optimized performance & scalability, <br>
