@@ -19,17 +19,17 @@ git clone https://github.com/harivansh666/AICoderReviewer.git  <br>
 🔹npx nodemon app.js
 
 <h2> 🛠️ Tech Stack </h2> <br>
-Frontend: React, Tailwind CSS
-Validation Library: Zod
-Language: Javascript
-Database: MongoDB
+Frontend: React, Tailwind CSS <br>
+Validation Library: Zod <br>
+Language: Javascript <br>
+Database: MongoDB <br>
 AI Integration: Google Gemini API <br>
-Authentication: JWT
-Location:  React Leaflet maps
+Authentication: JWT <br>
+Location:  React Leaflet maps <br>
 
 <h2>Features</h2>
-Left swipe dislike user store in database.
-Right swipe like user store in database. 
+Left swipe dislike user store in database. <br>
+Right swipe like user store in database. <br>
 
 <h2>Video Display</h2>
 https://github.com/user-attachments/assets/02ec6a3f-bbdc-46b8-9dbf-b9b8bba074ad
@@ -38,8 +38,8 @@ https://github.com/user-attachments/assets/02ec6a3f-bbdc-46b8-9dbf-b9b8bba074ad
 ✅ Optimized performance & scalability, <br>
 ✅ Designed with modern UI/UX principles. <br>
 
-<h1>🧠 AI-Powered generate tips according to profile (target) profile </h1>
-This project integrates Gemini AI for real-time code improvement suggestions, bug detection, and optimization recommendations.
+<h1>🧠 AI-Powered generate tips according to profile (target) profile </h1> <br>
+This project integrates Gemini AI for real-time code improvement suggestions, bug detection, and optimization recommendations. <br>
 
 📈 Why This Project Stands Out? <br>
 ✅ Uses AI-driven development <br>
