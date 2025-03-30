@@ -55,7 +55,7 @@ export default function Profile() {
             }
 
             // console.log(user);
-            const response = await axios.post('http://localhost:5000/api/profile', user, {
+            const response = await axios.post('https://vibely-5kiw.onrender.com/api/profile', user, {
                 withCredentials: true
             })
             setrespond(response.data)
