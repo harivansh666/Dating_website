@@ -41,7 +41,7 @@ Integrated Gemini AI for Generating ai tips according to profile (target) profil
 ✅ Designed with modern UI/UX principles. <br>
 
 <h1>🧠 AI-Powered generate tips according to profile (target) profile </h1> <br>
-This project integrates Gemini AI for real-time code improvement suggestions, bug detection, and optimization recommendations. <br>
+This project integrates Gemini AI for generating tips according to profile bio, improvement suggestions, bug detection, and optimization recommendations. <br>
 
 📈 Why This Project Stands Out? <br>
 ✅ Uses AI-driven development <br>
