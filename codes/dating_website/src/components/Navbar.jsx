@@ -40,7 +40,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    axios.get("http://localhost:5000/api/logout", {
+    axios.get("https://vibely-5kiw.onrender.com/api/logout", {
       withCredentials: true,
     });
     navigate("/");
@@ -48,8 +48,8 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
 
   // Handle clicking on an image to show the detail image
   const handleImageClick = (index) => {
-    setSelectedDetailImage(detailStory[index].image); // Get the image from detailStory array
-    setDetailImages(true); // Show the detailed image view
+    setSelectedDetailImage(detailStory[index].image); 
+    setDetailImages(true); /
   };
 
   const handleAiDate = async () => {
