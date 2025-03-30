@@ -1,11 +1,10 @@
 ﻿# Dating_website
 
-<h2>You can check this:- https://vibelydating.netlify.app/ </h2>
-AICodeReviewer
-🚀 A powerful MERN stack project leveraging AI-powered code review with Gemini
+<h2>You can check this:- https://vibelydating.netlify.app/ </h2> <br>
 
+🚀 A powerful MERN stack project vibely (dating website) with AI-powered Gemini
 
-🔹 <h2> Overview </h2> <br>
+<h2>🔹Overview </h2> 
 Vibely is a Dating website built using the MERN stack (MongoDB, Express, React, Node.js).
 
 <h1> 🚀 Setup & Installation </h1> <br>
