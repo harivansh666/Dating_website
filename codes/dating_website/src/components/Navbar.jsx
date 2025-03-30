@@ -49,7 +49,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
   // Handle clicking on an image to show the detail image
   const handleImageClick = (index) => {
     setSelectedDetailImage(detailStory[index].image); 
-    setDetailImages(true); /
+    setDetailImages(true); 
   };
 
   const handleAiDate = async () => {
