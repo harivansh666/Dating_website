@@ -33,7 +33,7 @@ Location:  React Leaflet maps <br>
 <h2>Features</h2>
 Left swipe dislike user store in database. <br>
 Right swipe like user store in database. <br>
-
+Integrated Gemini AI for Generating ai tips according to profile (target) profile , <br>
 <h2>Video Display</h2>
 
 ✅ Integrated Gemini AI for Generating ai tips according to profile (target) profile , <br>
