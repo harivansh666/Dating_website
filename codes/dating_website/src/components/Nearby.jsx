@@ -5,7 +5,7 @@ import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
-import { searchPeople } from "../data/SeachPeople"; // Ensure data includes lat/lng
+import { searchPeople } from "../data/SeachPeople"; 
 
 const Nearby = () => {
   const [people, setPeople] = useState([]);
