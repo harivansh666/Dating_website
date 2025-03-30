@@ -35,7 +35,6 @@ export default function Profile() {
             } catch (err) {
                 console.error("Error fetching data:", err);
 
-                // ⚠️ Agar cookie invalid/missing hai to error set karo aur login page pe bhej do
                 if (err.response && err.response.status === 401) {
                     setError("Unauthorized access! Please log in.");
                 }
