@@ -58,6 +58,8 @@ export default function Profile() {
                 withCredentials: true
             })
             setrespond(response.data)
+            setIsEditPopupOpen(false);
+
             // console.log(response.data)
         }
         catch (err) {
