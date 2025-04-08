@@ -41,7 +41,7 @@ export default function Profile() {
             }
         }
         fetchdata()
-    }, [])
+    }, [responseData])
 
     // console.log(responseData);
     const sendData = async (e) => {
