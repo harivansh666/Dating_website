@@ -68,7 +68,7 @@ const Navbar = () => {
       <div className="w-full flex flex-wrap border-2 border-b-white bg-[#d61856] justify-between p-5 ">
         {/* Logo */}
         {/* <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1> */}
-        <img src="./src/assets/logo-2.png" className="h-24  " alt="logo" />
+        <img src="https://res.cloudinary.com/desslvu1w/image/upload/v1750698861/logo-2_j0t9ya.png" className="h-24  " alt="logo" />
 
         {/* People Avatars - Instagram Story Slider */}
         <div className="flex items-center gap-2 ml-18 md:gap-4 w-[60vw]">
