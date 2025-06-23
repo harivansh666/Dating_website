@@ -1,44 +1,37 @@
-import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'; // Import Link
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import Link
 import axios from "axios";
 import twitter from "../images/exported/artboard 1/twitter.png";
 import facebook from "../images/exported/artboard 1/facebook.png";
 import search from "../images/exported/artboard 1/search.png";
-
+import { axiosInstance } from "../config/axiosInstance";
 
 const CreateAcc = () => {
   {
-
-
     const [formData, setFormData] = useState({
-      fullName: '',
-      email: '',
-      password: '',
-      dateOfBirth: '',
-      gender: '',
-      genderprefrence: '',
+      fullName: "",
+      email: "",
+      password: "",
+      dateOfBirth: "",
+      gender: "",
+      genderprefrence: "",
       location: { lat: null, lng: null },
     });
 
-
     useEffect(() => {
-
       if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition((position) =>
-          setFormData(prev => ({
+          setFormData((prev) => ({
             ...prev,
             location: {
               lat: position.coords.latitude,
-              lng: position.coords.longitude
-            }
+              lng: position.coords.longitude,
+            },
           }))
-        )
-      }
-      else {
+        );
+      } else {
         console.log("Geolocation not available");
       }
-
-
     }, []);
 
     const navigate = useNavigate();
@@ -46,9 +39,9 @@ const CreateAcc = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post("http://localhost:5000/api/createAcc", formData);
+        const response = await axiosInstance.post("/createAcc", formData);
         console.log("Account created:", response.data);
-        navigate('/'); // Sign In page pe redirect
+        navigate("/"); // Sign In page pe redirect
       } catch (error) {
         console.error("Error:", error);
         alert("Account creation failed!");
@@ -58,7 +51,7 @@ const CreateAcc = () => {
     const handleChange = (e) => {
       setFormData({
         ...formData,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value,
       });
     };
 
@@ -68,7 +61,9 @@ const CreateAcc = () => {
           <h2 className="text-3xl font-bold text-center text-pink-600">
             Create Account
           </h2>
-          <p className="text-center text-gray-600 mt-2">Find your perfect match ❤️</p>
+          <p className="text-center text-gray-600 mt-2">
+            Find your perfect match ❤️
+          </p>
 
           <form className="mt-6" onSubmit={handleSubmit}>
             <input
@@ -131,7 +126,10 @@ const CreateAcc = () => {
               <option value="other">Other</option>
             </select>
 
-            <button type='submit' className="w-full bg-pink-600 text-white p-3 rounded-lg font-bold hover:bg-pink-700 transition duration-300">
+            <button
+              type="submit"
+              className="w-full bg-pink-600 text-white p-3 rounded-lg font-bold hover:bg-pink-700 transition duration-300"
+            >
               Create Account
             </button>
           </form>
@@ -153,13 +151,16 @@ const CreateAcc = () => {
 
           <p className="mt-4 text-center text-gray-600">
             Already have an account?{" "}
-            <Link to="/signIn" className="text-pink-600 font-bold hover:underline">
+            <Link
+              to="/signIn"
+              className="text-pink-600 font-bold hover:underline"
+            >
               Sign In
             </Link>
           </p>
         </div>
       </div>
-    )
+    );
   }
-}
-export default CreateAcc
+};
+export default CreateAcc;

@@ -8,20 +8,14 @@ import { detailStory } from "../data/detailStory"; // Assuming this array contai
 import { Aicontext } from "../context/Main.context";
 
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { axiosInstance } from "../config/axiosInstance";
 
-const Navbar = () => {  // Receive handleAiDate as prop from App
-  const { Aibio, setAibio, Aires, setAires } = useContext(Aicontext)
-
-
-  console.log(Aibio);
-  // const handleAiDate = () => {
-  //   settips(true);
-  // }
+const Navbar = () => {
+  // Receive handleAiDate as prop from App
+  const { Aibio, setAibio, Aires, setAires } = useContext(Aicontext);
 
   const [detailImages, setDetailImages] = useState(false);
   const [selectedDetailImage, setSelectedDetailImage] = useState(null);
-  // const [Aiees, setAires] = useState('');
 
   const scrollRef = useRef(null);
 
@@ -39,7 +33,7 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    axios.get("http://localhost:5000/api/logout", {
+    axiosInstance.get("/logout", {
       withCredentials: true,
     });
     navigate("/");
@@ -53,30 +47,28 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
 
   const handleAiDate = async () => {
     try {
-
-      const response = await axios.get("http://localhost:5000/api/home", {
-        params: { Aibio },
-        withCredentials: true,
-      }, {
-        withCredentials: true,
-      })
-      setAires(response.data)
+      const response = await axiosInstance.get(
+        "/home/ai",
+        {
+          params: { Aibio },
+          withCredentials: true,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      setAires(response.data);
       console.log(response.data);
-
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error);
     }
-
-
-  }
+  };
   return (
     <>
-      <div className="w-full flex flex-wrap border-2 border-b-white justify-between p-5 bg-[#d61856]">
+      <div className="w-full flex flex-wrap border-2 border-b-white bg-[#d61856] justify-between p-5 ">
         {/* Logo */}
         {/* <h1 className="font-bold text-3xl md:text-4xl text-white">Logo</h1> */}
         <img src="./src/assets/logo-2.png" className="h-24  " alt="logo" />
-
 
         {/* People Avatars - Instagram Story Slider */}
         <div className="flex items-center gap-2 ml-18 md:gap-4 w-[60vw]">
@@ -111,13 +103,14 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
 
         {/* Animated Button */}
         <div className="mt-4 md:mt-3 ">
-
           <button
-            onClick={handleAiDate}  // Trigger the handleAiDate function passed as prop
-            className="relative bg-pink-500 px-5 py-2 md:px-7 md:py-3 rounded font-bold text-white cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group overflow-hidden">
+            onClick={handleAiDate} // Trigger the handleAiDate function passed as prop
+            className="relative bg-pink-500 px-5 py-2 md:px-7 md:py-3 rounded font-bold text-white cursor-pointer transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-pink-500/50 group overflow-hidden"
+          >
             Dating Tips <br />
-            <span className="text-lg md:text-2xl text-black inline-block wiggle">Using AI</span>
-
+            <span className="text-lg md:text-2xl text-black inline-block wiggle">
+              Using AI
+            </span>
             {/* Sparklesg */}
             <span className="absolute inset-0 pointer-events-none">
               <span className="absolute w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 sparkle top-1 left-1"></span>
@@ -135,11 +128,14 @@ const Navbar = () => {  // Receive handleAiDate as prop from App
           <div className="relative">
             <AiFillMessage className="text-white text-3xl md:text-4xl cursor-pointer p-2 rounded-full bg-gradient-to-r from-pink-500 to-red-500 hover:scale-110 hover:shadow-xl hover:shadow-pink-400 transition-all hover:text-yellow-500 hover:animate-pulse" />
           </div>
-          <button className="bg-white mt-1 w-20 h-10 text-black px-4 py-2 rounded-md" onClick={handleLogout}>Logout</button>
+          <button
+            className="bg-white mt-1 w-20 h-10 text-black px-4 py-2 rounded-md"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
         </div>
       </div>
-
-
 
       {/* Show the detailed story if `detailImages` is true */}
       {detailImages && (

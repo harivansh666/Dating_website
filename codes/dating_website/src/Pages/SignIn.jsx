@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from "react-router-dom"; // Import Link
 // import CreateAcc from "./CreateAcc";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -9,43 +9,40 @@ import plane from "../images/exported/artboard 1/paper-plane.png";
 import search from "../images/exported/artboard 1/search.png";
 import tile from "../images/exported/artboard 1/Tile 2 1.png";
 import twitter from "../images/exported/artboard 1/twitter.png";
+import { axiosInstance } from "../config/axiosInstance";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");  // setenail vich tu jo ve value type krunga us ne teri email de value change kr deni aa.
+  const [email, setEmail] = useState(""); // setenail vich tu jo ve value type krunga us ne teri email de value change kr deni aa.
   const [password, setPassword] = useState("");
   const navigate = useNavigate(); // UseNavigate hook use karein
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        email,
-        password
-
-      },
+      const response = await axiosInstance.post(
+        "/login",
+        {
+          email,
+          password,
+        },
         { withCredentials: true } // iss line krke cookies frontend tak ponch rahi aa
       );
 
       console.log("Login Successful:", response.data); // response vich data, Errors, status aur bhe ate haia
       navigate("/home");
       // Redirect karne ke liye (e.g., useNavigate hook use karein)
-    }
-
-    catch (error) {
+    } catch (error) {
       console.error("Login Failed:", error.response?.data || error.message);
       alert("Invalid credentials!");
     }
   };
 
   return (
-
     <form onSubmit={handleSubmit}>
       <div className="flex h-screen bg-pink-600 p-2">
         {/* Left Section */}
         <div className="h-110 w-80 mt-30 ml-4 absolute">
-          <img src={Dancers} alt=""
-            className=" h-full w-full ml-[-40px]" />
+          <img src={Dancers} alt="" className=" h-full w-full ml-[-40px]" />
         </div>
 
         <div className="w-1/2 flex ml-30 flex-col justify-center items-center p-10 text-white">
@@ -62,18 +59,18 @@ const SignIn = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-
             placeholder="Password"
             className="w-80 p-3 mb-6 rounded-md border-3 border-white text-white outline-none"
           />
           <Link to="/createAcc">
             <div className="ml-25 text-1xl">
-              <h4 className="text-blue-300 m-2 cursor-pointer ">Create an Account?</h4>
+              <h4 className="text-blue-300 m-2 cursor-pointer ">
+                Create an Account?
+              </h4>
             </div>
           </Link>
 
-
-          <div className="flex space-x-4 mb-6 mt-4" >
+          <div className="flex space-x-4 mb-6 mt-4">
             <button className="bg-white p-3 rounded-full">
               <img src={search} alt="Google" className="w-6 object-cover" />
             </button>
@@ -87,7 +84,8 @@ const SignIn = () => {
 
           <button
             type="submit"
-            className="bg-white text-black px-6 py-3 rounded-md font-bold cursor-pointer">
+            className="bg-white text-black px-6 py-3 rounded-md font-bold cursor-pointer"
+          >
             SUBMIT
           </button>
         </div>
@@ -103,6 +101,6 @@ const SignIn = () => {
         </div>
       </div>
     </form>
-  )
+  );
 };
 export default SignIn;

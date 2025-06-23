@@ -1,5 +1,6 @@
 const express = require("express");
 const userModel = require("../models/userModel");
+const cloudinary = require("../config/cloudinary.config");
 const jwt = require("jsonwebtoken");
 
 const updateProfile = async (req, res) => {
@@ -47,4 +48,38 @@ const profile = async (req, res) => {
   }
 };
 
-module.exports = { updateProfile, profile };
+const updateProfilePicture = async (req, res) => {
+  try {
+    const { profilePicture } = req.body;
+    const userId = req.user._id;
+
+    if (!profilePicture) {
+      return res.status(400).json({ message: "Profile picture is required" });
+    }
+
+    const uploadResult = await cloudinary.uploader.upload(profilePicture, {
+      folder: "user_profiles",
+    });
+
+    const updatedUser = await userModel.findByIdAndUpdate(
+      userId,
+      { profilePicture: uploadResult.secure_url },
+      { new: true }
+    );
+
+    res.status(200).json({
+      message: "Profile picture updated successfully",
+      user: updatedUser,
+    });
+  } catch (error) {
+    console.error("❌ Cloudinary Upload Error:", error.message);
+    res.status(500).json({ message: "Server error while uploading image" });
+  }
+};
+
+// ✅ CORRECT EXPORT
+module.exports = {
+  updateProfile,
+  updateProfilePicture,
+  profile,
+};

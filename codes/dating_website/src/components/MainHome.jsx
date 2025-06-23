@@ -5,23 +5,20 @@ import Scrollbar from "./Scrollbar";
 // import { mainHomeSlider } from "../data/MainHomeSlider";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
-import axios from "axios";
+import { axiosInstance } from "../config/axiosInstance";
 // import Aicontext from "../context/Main.context";
 
-
-
-const MainHome = ({ }) => {
+const MainHome = ({}) => {
   const slider = useRef(null);
   const [userData, setUserData] = useState(null);
   const [isAiopen, isAiclosed] = useState(false);
   const [error, setError] = useState(null);
 
-
-
   useEffect(() => {
-    axios.get("http://localhost:5000/api/home", {
-      withCredentials: true,
-    })
+    axiosInstance
+      .get("/home", {
+        withCredentials: true,
+      })
       .then((res) => {
         setUserData(res.data);
       })
@@ -33,13 +30,8 @@ const MainHome = ({ }) => {
           setError("Something went wrong");
         }
       });
-
-
   }, []);
 
-  // console.log(aitips);
-
-  // console.log(userData);
   return (
     <>
       {error ? (
@@ -47,7 +39,7 @@ const MainHome = ({ }) => {
           <div className="text-center">
             <h2 className="text-2xl font-bold text-red-500 mb-4">{error}</h2>
             <button
-              onClick={() => window.location.href = '/'}
+              onClick={() => (window.location.href = "/")}
               className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600"
             >
               Go to Login
@@ -55,7 +47,6 @@ const MainHome = ({ }) => {
           </div>
         </div>
       ) : (
-
         <div>
           <Navbar />
 
@@ -63,7 +54,6 @@ const MainHome = ({ }) => {
             <Sidebar />
             <AItips />
             <Scrollbar />
-
           </div>
         </div>
       )}

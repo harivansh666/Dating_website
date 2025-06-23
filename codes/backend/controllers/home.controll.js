@@ -1,12 +1,10 @@
 const userModel = require("../models/userModel");
-const { AiResponse } = require("../services/AI");
+// const { AiResponse } = require("../services/AI");
 
 const home = async (req, res) => {
   try {
-    const aiBoooo = req.query;
-    // const CurrentUser = req.user.id;
-    const Genaires = await AiResponse(aiBoooo);
-    res.json(Genaires);
+    const users = await userModel.find({ _id: { $ne: req.user._id } });
+    res.json(users);
   } catch (error) {
     console.log(error);
   }
