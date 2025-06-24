@@ -34,7 +34,11 @@ const login = async (req, res) => {
         return res.status(400).json({ message: "Invalid password" });
       }
       const token = jwt.sign({ email: email, password: password }, "shhhhh");
-      res.cookie("token", token);
+      res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None",
+      });
       res.status(200).json({ message: "Login successful" }); // iss line krke login hoya
     });
   } catch (err) {
@@ -128,6 +132,5 @@ const createuser = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
-
 
 module.exports = { login, createuser };
