@@ -33,6 +33,7 @@ const login = async (req, res) => {
       if (!isMatch) {
         return res.status(400).json({ message: "Invalid password" });
       }
+      
       const token = jwt.sign({ email: email, password: password }, "shhhhh");
       res.cookie("token", token, {
         httpOnly: true,
