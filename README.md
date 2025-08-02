@@ -4,6 +4,7 @@
 AICodeReviewer
 🚀 A powerful MERN stack project leveraging AI-powered code review with Gemini
 
+you can use:- email:- sahil@gmail.com, password:- 123456
 
 🔹 <h2> Overview </h2> <br>
 Vibely is a Dating website built using the MERN stack (MongoDB, Express, React, Node.js).
