@@ -14,7 +14,7 @@ git clone https://github.com/harivansh666/AICoderReviewer.git  <br>
 
 🔹cd codes/dating_websie <br> 
 🔹npm install <br>
-🔹npm start <br>
+🔹npm run dev <br>
 
 <h2> For Backend Setup </h2> 
 🔹cd codes/backend  <br>
@@ -65,5 +65,6 @@ Database: MongoDB
 AI Integration: Google Gemini API <br>
 Authentication: JWT
 Location:  React Leaflet maps
+
 
 
