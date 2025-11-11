@@ -31,6 +31,18 @@ app.use(
   })
 );
 
+
+app.get("/check", (req, res) => {
+  try {
+    res.json({ success: true, message: "chal pya" });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "not working",
+    });
+  }
+});
+
 app.use(
   "/api",
   authRoutes,
