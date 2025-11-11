@@ -11,12 +11,22 @@ import CreateAcc from "./Pages/CreateAcc";
 import AicontextProvider from "./context/Main.context";
 import Profile from "./Pages/Profile";
 import Sidebar from "./components/Sidebar";
+import { useEffect } from "react";
+import axios from "axios";
 
 function App() {
   // const handleAiDate = (e) => {
   //   console.log(e.target.value)
   //   setAiRender(true);  // Trigger the rendering of the AI content
   // };
+   const warmup = async () => {
+    const res = await axios.get("https://vibely-5kiw.onrender.com/check");
+    console.log(res.data);
+  };
+  
+  useEffect(() => {
+    warmup();
+  }, []);
 
   return (
     <AicontextProvider>
